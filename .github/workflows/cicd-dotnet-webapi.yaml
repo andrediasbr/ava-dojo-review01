@@ -14,5 +14,12 @@ jobs:
     needs: call-build
     runs-on: ubuntu-latest      
     steps: 
-      - run: echo "teste"
-    
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: ./output
+
+      ##gerar container
+      

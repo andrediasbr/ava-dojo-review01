@@ -14,8 +14,12 @@ jobs:
     needs: call-build
     runs-on: ubuntu-latest      
     steps: 
-      - run: echo "teste"
 
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: ./output
 
-    # - name: Publish to GitHub Packages
-    #   run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/andrediasbr/index.json
+      - name: Publish to GitHub Packages
+        run: dotnet nuget push ./output/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/andrediasbr/index.json
