@@ -6,6 +6,10 @@ on:
       app-path: 
         type: string
         required: true
+      package-type:
+        type: string
+        required: true
+        description: "package ou publish"
 
 jobs:
   build:
@@ -29,4 +33,17 @@ jobs:
     - name: Test
       run: dotnet test ${{ inputs.app-path }} --no-build --verbosity normal --configuration Release
 
-    
+    - name: Publish
+      if: ${{ inputs.package-type == 'publish' }}
+      run: dotnet publish ${{ inputs.app-path }} --no-build --configuration Release --output ./output      
+
+    - name: Pack
+      if: ${{ inputs.package-type == 'package' }}
+      run: dotnet pack ${{ inputs.app-path }} --no-build --configuration Release --output ./output    
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifact
+        path: ./output
+

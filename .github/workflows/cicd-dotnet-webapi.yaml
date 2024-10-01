@@ -8,11 +8,11 @@ jobs:
     uses: ./.github/workflows/reusable-ci-dotnet.yaml
     with:
       app-path: ./src-dotnet-webapi
+      package-type: "publish"
 
   deploy: 
+    needs: call-build
     runs-on: ubuntu-latest      
     steps: 
       - run: echo "teste"
     
-      # - name: Publish
-    #   run: dotnet publish ./src-dotnet-webapi --no-build --configuration Release --output ./output

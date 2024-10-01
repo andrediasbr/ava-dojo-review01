@@ -8,14 +8,14 @@ jobs:
     uses: ./.github/workflows/reusable-ci-dotnet.yaml
     with:
       app-path: ./src-dotnet-classlib
+      package-type: "package"
 
   deploy: 
+    needs: call-build
     runs-on: ubuntu-latest      
     steps: 
       - run: echo "teste"
 
-    # - name: Pack
-    #   run: dotnet pack ./src-dotnet-classlib --no-build --configuration Release --output ./nupkg
 
     # - name: Publish to GitHub Packages
     #   run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/andrediasbr/index.json
