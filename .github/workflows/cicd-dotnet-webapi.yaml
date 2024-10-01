@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:
+  call-build:
     uses: ./.github/workflows/reusable-ci-dotnet.yaml
     with:
       app-path: ./src-dotnet-webapi
