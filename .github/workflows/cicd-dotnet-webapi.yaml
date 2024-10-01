@@ -1,0 +1,30 @@
+name: .NET CI/CD WebApi
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+          dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore ./src-dotnet-webapi
+
+    - name: Build
+      run: dotnet build ./src-dotnet-webapi --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test ./src-dotnet-webapi --no-build --verbosity normal --configuration Release
+
+    - name: Publish
+      run: dotnet publish ./src-dotnet-webapi --no-build --configuration Release --output ./output

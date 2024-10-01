@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZnCalevLCdnL+vLy/evlqxuNNTbnsnuwI07G7qN/MIMcribvq0fv8B7+UYtFPaJ98nFZERIHP7acpO81Gtq50Q==",
+  "success": true,
+  "projectFilePath": "C:\\repos\\dojos\\ava-dojo-review01\\src-dotnet-webapi\\src-dotnet-webapi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.4\\microsoft.aspnetcore.openapi.8.0.4.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\andre.o.dias\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
