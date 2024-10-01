@@ -9,5 +9,10 @@ jobs:
     with:
       app-path: ./src-dotnet-webapi
 
-    # - name: Publish
+  deploy: 
+    runs-on: ubuntu-latest      
+    steps: 
+      - run: echo "teste"
+    
+      # - name: Publish
     #   run: dotnet publish ./src-dotnet-webapi --no-build --configuration Release --output ./output
