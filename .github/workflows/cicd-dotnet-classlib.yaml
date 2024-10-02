@@ -1,7 +1,11 @@
 name: .NET CI/CD Classlib
 
 on:
-  push:
+  
+  workflow_dispatch: 
+  push:    
+    paths:
+      - 'src-dotnet-classlib/**'
 
 jobs:
   call-build:

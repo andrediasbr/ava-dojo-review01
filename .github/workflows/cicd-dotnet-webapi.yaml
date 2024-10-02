@@ -1,7 +1,10 @@
 name: .NET CI/CD WebApi
 
 on:
+  workflow_dispatch: 
   push:
+    paths:
+      - 'src-dotnet-webapi/**'
 
 jobs:
   call-build:
