@@ -35,11 +35,13 @@ jobs:
 
     - name: Publish
       if: ${{ inputs.package-type == 'publish' }}
-      run: dotnet publish ${{ inputs.app-path }} --no-build --configuration Release --output ./output      
+      run: |
+        dotnet publish ${{ inputs.app-path }} --no-build --configuration Release --output ./output      
+        cp ${{ inputs.app-path }}/Dockerfile ./output
 
     - name: Pack
       if: ${{ inputs.package-type == 'package' }}
-      run: dotnet pack ${{ inputs.app-path }} --no-build --configuration Release --output ./output    
+      run: dotnet pack ${{ inputs.app-path }} --no-build --configuration Release --output ./output 
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
