@@ -37,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: ./target/*.jar
+          path: ${{ inputs.app-path}}/target/*.jar
 
