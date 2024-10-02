@@ -55,4 +55,12 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/andrediasbr/ava-dojo-review01</url>
+		</repository>
+	</distributionManagement>
+
 </project>
