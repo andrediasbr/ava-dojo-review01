@@ -2,6 +2,8 @@ name: CI/CD Java Web Api
 
 on:
   push:
+    paths:
+      - 'src-java-webapi/**'
 
 jobs:
   call-build:
