@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: webapi
-        image:  nginx #ghcr.io/andrediasbr/ava-dojo-review01
+        image:  ghcr.io/andrediasbr/ava-dojo-review01
         ports:
         - containerPort: 80
