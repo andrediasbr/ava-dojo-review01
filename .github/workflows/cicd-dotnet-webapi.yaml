@@ -48,3 +48,32 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - uses: azure/setup-kubectl@v4          
+
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}      
+
+      - uses: Azure/aks-set-context@v4
+        with:
+          cluster-name: aks-dojo-avanade
+          resource-group: rg-dojo-avanade          
+
+      - uses: Azure/k8s-create-secret@v5
+        with:
+          container-registry-url: ghcr.io
+          container-registry-username: ${{ github.actor }}
+          container-registry-password: ${{ secrets.GITHUB_TOKEN }}      
+          secret-name: demo-k8s-secret          
+
+      - uses: Azure/k8s-deploy@v5
+        with:
+          action: deploy
+          manifests: |
+            ./output/manifests/deployment.yaml
+            ./output/manifests/service.yaml
+          images: |
+              ghcr.io/${{ github.repository }}:${{ github.ref_name }}
+          imagepullsecrets: |
+            demo-k8s-secret          
