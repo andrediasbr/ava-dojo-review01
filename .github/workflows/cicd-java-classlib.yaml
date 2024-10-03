@@ -24,8 +24,7 @@ jobs:
         name: build-artifact
         path: ./output
 
-    # - name: Publish to GitHub Packages
-    #   run: mvn deploy:deploy-file -Dfile=./output/your-artifact.jar -DgroupId=com.yourcompany -DartifactId=your-artifact -Dversion=1.0.0 -Dpackaging=jar -DrepositoryId=github -Durl=https://maven.pkg.github.com/your-repo
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   working-directory: ./output
+    - name: Publish to GitHub Packages
+      run: mvn deploy:deploy-file -Dfile=./output/demo-classlib-0.0.1-SNAPSHOT.jar -DgroupId=com.example.avareview -DartifactId=demo-classlib -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DrepositoryId=github -Durl=https://maven.pkg.github.com/andrediasbr/ava-dojo-review01
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
