@@ -38,6 +38,7 @@ jobs:
       run: |
         dotnet publish ${{ inputs.app-path }} --no-build --configuration Release --output ./output      
         cp ${{ inputs.app-path }}/Dockerfile ./output
+        cp -R ${{ inputs.app-path }}/manifests ./output
 
     - name: Pack
       if: ${{ inputs.package-type == 'package' }}
